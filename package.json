@@ -1,0 +1,36 @@
+{
+	"name": "wc-post-types",
+	"version": "1.0.0",
+	"description": "Sessions, Speakers, Sponsors and much more.",
+	"author": "WordCamp Team",
+	"license": "GPL-2.0-or-later",
+	"private": true,
+	"keywords": [],
+	"homepage": "https://github.com/WordPress/wordcamp.org/tree/production/public_html/wp-content/plugins/wc-post-types",
+	"repository": "git+https://github.com/WordPress/wordcamp.org.git",
+	"bugs": {
+		"url": "https://github.com/WordPress/wordcamp.org/issues?q=label%3A%22%5BComponent%5D+WC-Post-Types%22"
+	},
+	"devDependencies": {
+		"@wordpress/eslint-plugin": "5.0.1",
+		"@wordpress/scripts": "8.0.1"
+	},
+	"eslintConfig": {
+		"extends": "../../../../.eslintrc.js",
+		"globals": {
+			"WCPT_Session_Defaults": "true"
+		}
+	},
+	"prettier": "../../../../.prettierrc.js",
+	"stylelint": {
+		"extends": "../../../../.stylelintrc"
+	},
+	"scripts": {
+		"start": "wp-scripts start sessions=./js/src/session/index.js speakers=./js/src/speaker/index.js organizers=./js/src/organizer/index.js",
+		"build": "wp-scripts build sessions=./js/src/session/index.js speakers=./js/src/speaker/index.js organizers=./js/src/organizer/index.js",
+		"format:js": "wp-scripts format-js js/src",
+		"lint:js": "wp-scripts lint-js js/src",
+		"lint:css": "wp-scripts lint-style css/editor.css",
+		"lint:pkg-json": "wp-scripts lint-pkg-json"
+	}
+}
